@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rideau Canal — Ice Safety Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-inner">
+      <div class="header-title">
+        <span class="header-eyebrow">NCC / Ottawa ❄</span>
+        <h1>Rideau Canal Ice Monitor</h1>
+      </div>
+      <div id="status-banner" class="status-banner status-loading">
+        <span class="status-dot"></span>
+        <span id="status-label">Loading…</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Location Cards ── -->
+  <main>
+    <section class="cards-grid" id="cards-grid">
+      <!-- injected by app.js -->
+    </section>
+
+    <!-- ── Charts ── -->
+    <section class="charts-section">
+      <h2 class="section-title">Ice Thickness &amp; Surface Temp — Last Hour</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Dow's Lake</h3>
+          <canvas id="chart-dows-lake"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Fifth Avenue</h3>
+          <canvas id="chart-fifth-avenue"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>NAC</h3>
+          <canvas id="chart-nac"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <span>Last refreshed: <span id="last-refresh">—</span></span>
+    <span>Next refresh in <span id="countdown">30</span>s</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
